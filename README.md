@@ -7,6 +7,8 @@
 
 Включает общение по последовательному порту в режиме текстовых команд и протоколирование событий в энергонезависимой памяти. 
 
+![Flame](https://github.com/user-attachments/assets/0cf7b1e0-17c8-406d-ba7e-4b432125cfc6)
+
 Далее будет пошагово описано как сгенерировать проект в **STM32CubeMX** и добавить в него весь необходимый функционал.
 
 ## Сборка пустого проекта в STM32CubeMX
@@ -20,25 +22,25 @@ https://www.st.com/en/development-tools/stm32cubemx.html
 
 Для создания проекта выбираем **File→New Project**, или воспользуемся горячей клавишей Ctr+N.
 
-Выбираем **Board Selector**. В строке **Commercial Part Number** (находится в левой части окна раздела Board Selector) вводим название отладочной платы — **NUCLEO-L053R8** или **NUCLEO-F072RB**. Из списка **Boadrs List** (располагается в центре окна) выбираем соотвествующую отладочную плату и нажимаем кнопку **Start Project**. Откроется окно **Board Project Options**. Нажимаем кнопку **Yes** (инициализируем всю периферию по умолчанию).
+Выбираем **Board Selector**. В строке **Commercial Part Number** (находится в левой части окна раздела **Board Selector**) вводим название отладочной платы — **NUCLEO-L053R8** или **NUCLEO-F072RB**. Из списка **Boadrs List** (располагается в центре окна) выбираем соотвествующую отладочную плату и нажимаем кнопку **Start Project**. Откроется окно **Board Project Options**. Нажимаем кнопку **Yes** (инициализируем всю периферию по умолчанию).
 
 Для **USART2** (вкладка **Connectivity**) в **NVIC Settings** включаем **USART2 global interrupt**. На вкладке **Advanced Settings** в разделе **Driver Selector\USART** выбираем «**LL**». Это означает подключение низкоуровневых библиотек для работы с последовательным портом.
 
 На вкладке **Clock Configuration** для платы **NUCLEO-L053R8** выбираем источник тактирования **HSI** в **System Clock Mux**. Для платы **NUCLEO-F072RB** он выбран по умолчанию. 
 
 На вкладке **Pinout&Configuration** для выводов контроллера **PC0** и **PC1** выбираем режимы работы и наименования:
-**PC0** режим **GPIO mode** выбираем **Output Open Drain**, имя **User Label** указываем **OUT_OD**. 
-**PC1** режим **GPIO mode** выбираем **External Interrupt Mode with Rising edge trigger detection**, имя **User Label** указываем **IN_RISING**. 
+- **PC0** режим **GPIO mode** выбираем **Output Open Drain**, имя **User Label** указываем **OUT_OD**. 
+- **PC1** режим **GPIO mode** выбираем **External Interrupt Mode with Rising edge trigger detection**, имя **User Label** указываем **IN_RISING**. 
 
-Включаем прерывание для соотвествующих ножек контроллера. Во вкладке **NVIC** для **GPIO** включаем **EXTI line 0 and 1 interrupts**. 
+Включаем прерывание для соотвествующих ножек контроллера. Во вкладке **NVIC Interrupt Table** для **GPIO** включаем **EXTI line 0 and 1 interrupts**. 
 
 Для сторожевого таймера **IWDG** выбираем **Activated**.
 
-Генерируем код кнопкой **GENERATE CODE**.
+Указываем наименование и путь к файлам проекта. Генерируем код кнопкой **GENERATE CODE**.
 
 ## Сборка готового проекта
 
-Открываем ранее созданный пустой проект.
+Открываем ранее созданный проект.
 
 Файлы **cmd.h, fifo.h, log.h, time.h, usart.h** копируем в \Core\Inc\.
 
