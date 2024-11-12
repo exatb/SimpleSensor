@@ -291,6 +291,6 @@ https://github.com/exatb/ComTest
 
 ![image](https://github.com/user-attachments/assets/f5953525-6a9d-4bb5-adff-49e2da39cb13)
 
-
+При возникновении пламени в зоне видимости фотодиода должно появляться сообщение Alarm!
 
 
