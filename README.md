@@ -291,6 +291,10 @@ https://github.com/exatb/ComTest
 
 ![image](https://github.com/user-attachments/assets/f5953525-6a9d-4bb5-adff-49e2da39cb13)
 
-При возникновении пламени в зоне видимости фотодиода должно появляться сообщение Alarm!
+Далее подключаем модуль **KY-026** как показано на рисунке 
+
+![Nucleo and KY-026](https://github.com/user-attachments/assets/a9e8c6b6-0ab6-4f79-9707-5fd9d0f098b4)
+
+При возникновении пламени в зоне видимости фотодиода должно появляться сообщение **Alarm!**
 
 
