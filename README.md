@@ -297,4 +297,8 @@ https://github.com/exatb/ComTest
 
 При возникновении пламени в зоне видимости фотодиода должно появляться сообщение **Alarm!**
 
+Собранные проекты для плат расположены:
+- **NUCLEO-F072R8** https://github.com/exatb/SimpleSensor/blob/main/BaseProjectF072RB.zip
+- **NUCLEO-L053R8** https://github.com/exatb/SimpleSensor/blob/main/BaseProjectL053R8.zip
+
 
