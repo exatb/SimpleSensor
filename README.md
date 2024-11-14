@@ -20,7 +20,7 @@
 
 https://www.st.com/en/development-tools/stm32cubemx.html
 
-Для создания проекта выбираем **File→New Project**, или воспользуемся горячей клавишей Ctr+N.
+Для создания проекта выбираем **File→New Project**, или воспользуемся горячей клавишей **Ctr+N**.
 
 Выбираем **Board Selector**. В строке **Commercial Part Number** (находится в левой части окна раздела **Board Selector**) вводим название отладочной платы — **NUCLEO-L053R8** или **NUCLEO-F072RB**. Из списка **Boadrs List** (располагается в центре окна) выбираем соотвествующую отладочную плату и нажимаем кнопку **Start Project**. Откроется окно **Board Project Options**. Нажимаем кнопку **Yes** (инициализируем всю периферию по умолчанию).
 
@@ -48,7 +48,7 @@ https://www.st.com/en/development-tools/stm32cubemx.html
 
 ### Корректировка main.h
 
-В файл main.h добавляем следующий код:
+В файл **main.h** добавляем следующий код:
 ```
 extern volatile uint8_t alarm_sensor;
 ```
@@ -154,7 +154,7 @@ void ReadAndShowStates()
 	}
 }
 ```
-В функцию main() добавляем следующий код:
+В функцию **main()** добавляем следующий код:
 ```
 #ifdef IWDG_ENABLE
   MX_IWDG_Init();
@@ -164,7 +164,7 @@ alarm_sensor = 0;
 LL_USART_EnableIT_RXNE(USART2);  
 USART_Write_String((unsigned char*)"Ready\r\n");
 ```
-В тело цикла while добавляем следующий код: 
+В тело цикла **while** добавляем следующий код: 
 ```
 if (HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin)==GPIO_PIN_RESET)
 {
@@ -268,7 +268,7 @@ HAL_IWDG_Refresh(&hiwdg);
 ```
 
 ### Корректировка stm32f0xx_it.с 
-В файл stm32f0xx_it.с добавляем следующий код:
+В файл **stm32f0xx_it.с** добавляем следующий код:
 ```
 #include "time.h"
 #include "usart.h"
@@ -283,7 +283,7 @@ alarm_sensor = 1;
 ```
 
 ## Проверка
-Компилируем код и запускаем на отладочной плате. Для взаимодействия с отладочной платой можно использовать программу ComTest. 
+Компилируем код и запускаем на отладочной плате. Для взаимодействия с отладочной платой можно использовать программу **ComTest**. 
 
 https://github.com/exatb/ComTest
 
