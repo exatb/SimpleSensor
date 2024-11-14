@@ -55,7 +55,7 @@ extern volatile uint8_t alarm_sensor;
 
 ### Корректировка main.c
 
-В main.c добавляем все заголовки: 
+В **main.c** добавляем все заголовки: 
 ```
 #include "cmd.h"
 #include "log.h"
